@@ -1,0 +1,21 @@
+# External Yocto layers — cloned by setup.sh, not owned by this repo
+layers/
+
+# Build output
+build/
+build/conf/
+
+# Yocto build artifacts (may appear outside build/ if DL_DIR/SSTATE_DIR are overridden)
+tmp/
+cache/
+sstate-cache/
+downloads/
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
