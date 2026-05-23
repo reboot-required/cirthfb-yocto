@@ -86,6 +86,8 @@ BB_DISKMON_DIRS ??= "\\
     "
 
 LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
+
+IMAGE_INSTALL:append = " kernel-module-cirthfb"
 LOCALCONF
 
 echo ""
@@ -96,7 +98,7 @@ echo ""
 echo " To start a build, run:"
 echo ""
 echo "   source layers/poky/oe-init-build-env build"
-echo "   bitbake core-image-base"
+echo "   bitbake core-image-minimal"
 echo ""
 echo " Downloads : ~/.yocto/downloads"
 echo " sstate    : ~/.yocto/sstate-cache"

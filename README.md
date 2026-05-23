@@ -14,7 +14,7 @@ Yocto layer and image recipe for [cirthfb](https://github.com/reboot-required/ci
 
 ```text
 cirthfb-yocto/
-(├── meta-cirthfb/       # custom Yocto layer for this project)
+├── meta-cirthfb/       # custom Yocto layer for this project
 ├── layers/             # external layers cloned by setup.sh (not tracked)
 │   ├── poky/
 │   ├── meta-raspberrypi/
