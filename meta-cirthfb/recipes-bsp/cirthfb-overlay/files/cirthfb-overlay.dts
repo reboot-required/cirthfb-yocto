@@ -1,0 +1,47 @@
+// SPDX-License-Identifier: GPL-2.0-only
+/dts-v1/;
+/plugin/;
+
+#include <dt-bindings/gpio/gpio.h>
+
+/ {
+	compatible = "brcm,bcm2835";
+
+	fragment@0 {
+		target = <&spi0>;
+		__overlay__ {
+			status = "okay";
+		};
+	};
+
+	fragment@1 {
+		target = <&spi0>;
+		__overlay__ {
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			cirthfb: cirthfb@0 {
+				compatible = "waveshare,epd2in13v4";
+				reg = <0>;
+				spi-max-frequency = <4000000>;
+				dc-gpios = <&gpio 25 GPIO_ACTIVE_HIGH>;
+				rst-gpios = <&gpio 17 GPIO_ACTIVE_HIGH>;
+				busy-gpios = <&gpio 24 GPIO_ACTIVE_HIGH>;
+				status = "okay";
+			};
+		};
+	};
+
+	fragment@2 {
+		target = <&spidev0>;
+		__overlay__ {
+			status = "disabled";
+		};
+	};
+
+	__overrides__ {
+		dc_pin   = <&cirthfb>, "dc-gpios:4";
+		rst_pin  = <&cirthfb>, "rst-gpios:4";
+		busy_pin = <&cirthfb>, "busy-gpios:4";
+	};
+};
