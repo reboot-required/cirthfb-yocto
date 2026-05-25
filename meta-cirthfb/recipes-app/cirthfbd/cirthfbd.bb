@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://../LICENSE;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
 inherit systemd
 
-SRC_URI = "git://github.com/reboot-required/cirthfb;branch=sprint-3;protocol=https"
+SRC_URI = "git://github.com/reboot-required/cirthfb;branch=main;protocol=https"
 SRCREV = "${AUTOREV}"
 
 S = "${WORKDIR}/git/daemon"
